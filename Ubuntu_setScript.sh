@@ -26,11 +26,12 @@ sudo npm install -g loopback-cli
 npm install -g yarn
 
 # Mongodb, Installing and starting server
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
-sudo echo "deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.listsudo apt-get update
-sudo apt-get install -y mongodb-org
-sudo service mongod start
-sudo service mongod status
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
+echo "deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+apt-get update
+apt-get install -y mongodb-org
+service mongod start
+service mongod status
 
 # Forever to run nodejs scripts forever
 sudo npm install forever -g
