@@ -15,6 +15,9 @@ sudo nvm install 7.10.0
 sudo nvm use 7.10.0
 node -v
 
+#NPM
+apt install -y npm
+
 #nodemon
 sudo npm install -g nodemon
 sudo npm install -g loopback-cli
