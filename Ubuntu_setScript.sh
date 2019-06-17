@@ -19,6 +19,9 @@ node -v
 sudo npm install -g nodemon
 sudo npm install -g loopback-cli
 
+#yarn
+npm install -g yarn
+
 # Mongodb, Installing and starting server
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 68818C72E52529D4
 sudo echo "deb http://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.listsudo apt-get update
@@ -123,9 +126,12 @@ add-apt-repository universe
 apt install -y gnome-tweak-tool
 
 #Terminator [Terminal]
-sudo apt install -y terminator
+apt install -y terminator
 
-
+#Nginx
+apt install -y nginx
+systemctl start nginx
+systemctl enable nginx
 
 #enable ufw
 ufw enable
