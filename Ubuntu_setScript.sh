@@ -135,23 +135,9 @@ docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 
-# Sublime
+# Sublime & Terminator
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt update
-sudo apt install -y sublime-text
+sudo apt install -y sublime-text terminator
 
-
-#Terminator [Terminal]
-apt install -y terminator
-
-#Nginx
-apt install -y nginx
-systemctl start nginx
-systemctl enable nginx
-
-#enable ufw
-ufw enable
-ufw allow ssh
-ufw allow 'Nginx Full'
-ufw allow 27017/tcp
