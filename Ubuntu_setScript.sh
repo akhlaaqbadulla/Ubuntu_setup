@@ -6,7 +6,10 @@
 sudo apt update && apt full-upgrade
 
 # Installing build essentials
-sudo apt-get install -y build-essential libssl-dev
+sudo apt-get install -y build-essential libssl-dev gnupg apt-transport-https ca-certificates curl software-properties-common
+
+#java jdk
+sudo apt install openjdk-11-jdk
 
 # Nodejs and NVM
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
@@ -117,7 +120,6 @@ sudo apt-get install -y dict-devil
 sudo apt-get install -y dict-moby-thesaurus
 
 # Docker
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 sudo apt update
@@ -134,10 +136,15 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker volume create portainer_data
 docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
+#Brave Browser
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 # Sublime & Terminator
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt update
-sudo apt install -y sublime-text terminator
+sudo apt install -y sublime-text vim terminator vlc 7zip okular
 
